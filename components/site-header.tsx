@@ -1,13 +1,15 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
-import { navLinks, WHATSAPP_LINK } from "@/lib/site-data"
+import { Menu, X, ShoppingCart } from "lucide-react"
+import { navLinks } from "@/lib/site-data"
+import { useCart } from "@/lib/cart-context"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { openCart, totalQty } = useCart()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -29,7 +31,7 @@ export function SiteHeader() {
             LG
           </span>
           <span className="text-base leading-none md:text-lg">
-            Lumpia Geget<span className="hidden sm:inline"> Surabaya</span>
+            Lumpia Geget<span className="hidden sm:inline"> Suramadu</span>
           </span>
         </a>
 
@@ -46,14 +48,20 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 md:inline-block"
+          <button
+            type="button"
+            onClick={openCart}
+            className="relative hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 md:inline-flex"
+            aria-label="Buka keranjang pesanan"
           >
+            <ShoppingCart className="h-4 w-4" />
             Pesan Sekarang
-          </a>
+            {totalQty > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-black text-primary-foreground">
+                {totalQty > 99 ? "99+" : totalQty}
+              </span>
+            )}
+          </button>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -79,14 +87,14 @@ export function SiteHeader() {
                 {link.label}
               </a>
             ))}
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-accent-foreground"
+            <button
+              type="button"
+              onClick={() => { openCart(); setOpen(false) }}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-accent-foreground"
             >
+              <ShoppingCart className="h-4 w-4" />
               Pesan Sekarang
-            </a>
+            </button>
           </nav>
         </div>
       )}

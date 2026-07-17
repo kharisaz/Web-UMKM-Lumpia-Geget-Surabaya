@@ -99,32 +99,80 @@ export const menuItems: MenuItem[] = [
   },
 ]
 
-export type Promo = {
-  title: string
-  excerpt: string
+export type Review = {
+  name: string
+  location: string
+  avatar: string        // initials, 2 chars
+  avatarColor: string   // tailwind bg class
+  rating: number        // 1-5
+  text: string
   date: string
-  image: string
-  content: string
+  order?: string        // menu yang dipesan
 }
 
-export const promos: Promo[] = [
+export const reviews: Review[] = [
   {
-    title: "Paket Bundling Hemat Keluarga",
-    excerpt: "Nikmati 50 pcs jajanan campur dengan harga spesial untuk kumpul keluarga.",
-    date: "Promo Minggu Ini",
-    image: "/promo-bundle.png",
-    content:
-      "Dapatkan paket bundling isi 50 pcs jajanan campur (lumpia, pastel, dan ote-ote udang) hanya dengan Rp 120.000. Cocok untuk arisan, rapat, atau kumpul keluarga. Promo berlaku untuk pemesanan minimal H-1 melalui WhatsApp. Gratis ongkir untuk area Surabaya Pusat.",
+    name: "Sari Dewi",
+    location: "Surabaya Pusat",
+    avatar: "SD",
+    avatarColor: "bg-orange-400",
+    rating: 5,
+    text: "Lumpianya renyah banget! Beda sama yang lain, ini beneran digoreng fresh waktu pesanan masuk. Sampe rumah masih krispi. Sudah langganan tiap minggu untuk arisan ibu-ibu.",
+    date: "2 minggu lalu",
+    order: "Lumpia Geget × 30 pcs",
   },
   {
-    title: "Selalu Digoreng Fresh Setiap Pesanan",
-    excerpt: "Kenapa lumpia kami selalu renyah? Karena kami goreng saat kamu pesan.",
-    date: "Cerita Dapur",
-    image: "/promo-fresh.png",
-    content:
-      "Rahasia kerenyahan Lumpia Geget ada pada proses penggorengan yang dilakukan tepat saat pesanan masuk. Kami tidak menyimpan gorengan lama-lama, sehingga tekstur tetap garing dan rasa tetap gurih saat sampai di tangan kamu. Bahan-bahan dipilih segar setiap pagi langsung dari pasar lokal Surabaya.",
+    name: "Budi Santoso",
+    location: "Surabaya Timur",
+    avatar: "BS",
+    avatarColor: "bg-blue-500",
+    rating: 5,
+    text: "Pesan buat konsumsi rapat kantor 50 pcs lumpia + pastel. Semua on time dan masih panas waktu datang. Respon WA-nya juga cepat dan ramah. Recommended banget!",
+    date: "1 minggu lalu",
+    order: "Lumpia Geget + Pastel × 50 pcs",
+  },
+  {
+    name: "Mbak Rina",
+    location: "Sidoarjo",
+    avatar: "MR",
+    avatarColor: "bg-pink-500",
+    rating: 5,
+    text: "Ote-ote udangnya juara! Udangnya kerasa banget, tidak pelit. Sinom-nya juga segar alami. Cocok banget dimakan bareng. Harganya juga masih sangat terjangkau.",
+    date: "3 minggu lalu",
+    order: "Ote-ote Udang + Sinom",
+  },
+  {
+    name: "Pak Hendra",
+    location: "Surabaya Barat",
+    avatar: "PH",
+    avatarColor: "bg-emerald-500",
+    rating: 5,
+    text: "Nasi bebek gorengnya mantap, sambalnya nampol! Sudah coba beberapa tempat nasi bebek di Surabaya, ini salah satu yang terbaik. Porsinya juga besar untuk harganya.",
+    date: "1 bulan lalu",
+    order: "Nasi Bebek",
+  },
+  {
+    name: "Fitri Handayani",
+    location: "Surabaya Selatan",
+    avatar: "FH",
+    avatarColor: "bg-violet-500",
+    rating: 5,
+    text: "Pesan untuk syukuran keluarga, minta 100 pcs lumpia. Hasilnya memuaskan, semua tamu senang dan minta nambah. Pelayanannya profesional dan tepat waktu. Terima kasih!",
+    date: "1 bulan lalu",
+    order: "Lumpia Geget × 100 pcs",
+  },
+  {
+    name: "Dian Pratiwi",
+    location: "Surabaya Utara",
+    avatar: "DP",
+    avatarColor: "bg-amber-500",
+    rating: 5,
+    text: "Sudah 3 bulan jadi pelanggan setia. Kualitasnya konsisten, tidak pernah mengecewakan. Setiap pesan selalu renyah dan bumbunya meresap sempurna. Top markotop!",
+    date: "3 hari lalu",
+    order: "Lumpia Geget + Pastel",
   },
 ]
+
 
 export type Faq = {
   question: string
@@ -135,27 +183,47 @@ export const faqs: Faq[] = [
   {
     question: "Bagaimana cara memesan?",
     answer:
-      "Cukup klik tombol 'Pesan via WhatsApp' di halaman ini untuk terhubung langsung dengan kami. Sebutkan menu dan jumlah pesanan, lalu kami akan konfirmasi total dan estimasi waktu. Anda juga bisa memesan melalui GrabFood.",
+      "Pilih menu yang Anda inginkan lewat tombol 'Pesan Sekarang', tambahkan ke keranjang, lalu checkout — detail pesanan akan terkirim otomatis ke WhatsApp kami. Anda juga bisa langsung chat ke WhatsApp untuk tanya-tanya terlebih dahulu, atau pesan melalui GrabFood.",
   },
   {
-    question: "Apakah menerima pesanan dalam jumlah besar?",
+    question: "Apakah bisa pesan dalam jumlah besar untuk acara?",
     answer:
-      "Tentu! Kami melayani pesanan untuk arisan, rapat, hajatan, dan acara kantor. Untuk pesanan di atas 50 pcs, mohon pesan minimal H-1 agar semua digoreng fresh.",
+      "Tentu saja! Kami melayani pesanan untuk arisan, syukuran, pernikahan, rapat kantor, dan berbagai acara lainnya. Untuk pesanan di atas 50 pcs, harap pesan minimal H-1 agar semua digoreng fresh dan tepat waktu. Hubungi kami untuk harga spesial pesanan partai.",
   },
   {
-    question: "Apakah ada layanan antar?",
+    question: "Apakah ada layanan antar ke rumah?",
     answer:
-      "Ya, kami melayani pengantaran untuk area Surabaya. Gratis ongkir untuk area Surabaya Pusat dengan minimum pembelian tertentu. Di luar area, ongkir menyesuaikan jarak. Anda juga bisa pesan via GrabFood.",
+      "Ya! Kami melayani pengantaran untuk area Surabaya dan sekitarnya. Ongkos kirim menyesuaikan jarak dari lokasi kami. Anda juga bisa pesan melalui GrabFood untuk pengantaran yang lebih praktis dengan tracking real-time.",
   },
   {
-    question: "Berapa lama lumpia tetap renyah?",
+    question: "Berapa lama lumpia tetap renyah setelah dipesan?",
     answer:
-      "Karena selalu digoreng fresh saat pesanan masuk, lumpia paling renyah dinikmati dalam 2-3 jam pertama. Bila dingin, cukup panaskan sebentar di air fryer atau oven agar kembali garing.",
+      "Karena digoreng fresh saat pesanan masuk, lumpia paling nikmat dinikmati dalam 1–2 jam pertama. Jika perlu disimpan, panaskan kembali di air fryer selama 3–5 menit atau di oven — lumpia akan kembali garing seperti baru digoreng.",
   },
   {
-    question: "Metode pembayaran apa saja yang tersedia?",
+    question: "Apa saja isian lumpia Geget?",
     answer:
-      "Kami menerima pembayaran tunai (COD), transfer bank, serta e-wallet seperti QRIS, GoPay, dan OVO untuk memudahkan transaksi kamu. Pembayaran juga bisa dilakukan melalui GrabFood.",
+      "Lumpia Geget berisi rebung pilihan yang sudah dirajang, dicampur telur, bumbu rempah khas Surabaya, dan bahan premium lainnya. Isiannya padat, gurih, dan tidak berminyak berlebih. Semua bahan disiapkan fresh setiap harinya.",
+  },
+  {
+    question: "Apakah tersedia rebung utuh atau rajang untuk dibeli?",
+    answer:
+      "Ya! Kami juga menjual rebung utuh siap olah dan rebung rajang yang sudah bersih dan siap masak. Cocok untuk Anda yang ingin memasak lumpia sendiri di rumah atau untuk keperluan usaha kuliner. Hubungi kami via WhatsApp untuk ketersediaan dan harga.",
+  },
+  {
+    question: "Apakah ada minimal pesanan?",
+    answer:
+      "Tidak ada minimal pesanan untuk pembelian satuan. Namun untuk pesanan antar/delivery, biasanya ada minimum pembelian agar ongkos kirim lebih efisien. Untuk pesanan acara dalam jumlah besar, kami bisa diskusikan langsung via WhatsApp.",
+  },
+  {
+    question: "Jam berapa bisa memesan?",
+    answer:
+      "Kami menerima pesanan setiap hari. Untuk pesanan hari itu (same-day), hubungi kami pagi hari agar sempat disiapkan fresh. Untuk pesanan acara atau dalam jumlah besar, pesan minimal H-1. Cek WhatsApp kami untuk info jam operasional terkini.",
+  },
+  {
+    question: "Metode pembayaran apa saja yang diterima?",
+    answer:
+      "Kami menerima berbagai metode pembayaran: tunai (COD saat pengantaran), transfer bank (BCA, BRI, Mandiri), serta e-wallet seperti QRIS, GoPay, Dana, dan OVO. Untuk pemesanan via GrabFood, pembayaran mengikuti opsi yang tersedia di aplikasi.",
   },
 ]
 
@@ -163,6 +231,7 @@ export const navLinks = [
   { label: "Tentang", href: "#about" },
   { label: "Menu", href: "#menu" },
   { label: "Pesan", href: "#order" },
+  { label: "Ulasan", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
   { label: "Kontak", href: "#contact" },
 ]
