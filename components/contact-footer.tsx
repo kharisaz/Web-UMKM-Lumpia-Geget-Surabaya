@@ -101,8 +101,8 @@ export function ContactFooter() {
               <ul className="mt-3 space-y-1.5 text-sm text-primary-foreground/70">
                 <li className="flex items-center gap-2">
                   <Phone className="h-3.5 w-3.5 shrink-0 opacity-60" />
-                  <a href="tel:+6281234567890" className="hover:text-primary-foreground">
-                    +62 812-3456-7890
+                  <a href="tel:+6281259969967" className="hover:text-primary-foreground">
+                    +62 812-5996-9967
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
