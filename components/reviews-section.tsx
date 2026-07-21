@@ -208,7 +208,7 @@ export function ReviewsSection() {
             Sudah pesan dan puas dengan Lumpia Geget?
           </p>
           <a
-            href={`https://wa.me/6281259969967?text=${encodeURIComponent("Halo, saya ingin memberikan ulasan untuk Lumpia Geget Surabaya! ⭐")}`}
+            href={`https://wa.me/6281259969967?text=${encodeURIComponent("Halo, saya ingin memberikan ulasan untuk Lumpia Geget Suramadu! ⭐")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-2.5 text-sm font-semibold text-primary shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"

@@ -20,7 +20,7 @@ function buildWhatsAppMessage(
     return `• ${ci.item.name} × ${ci.qty} = ${formatRupiah(unit * ci.qty)}`
   })
   const msg = [
-    "Halo Lumpia Geget Surabaya! 👋",
+    "Halo Lumpia Geget Suramadu! 👋",
     "",
     "Saya ingin memesan:",
     ...lines,

@@ -1,9 +1,9 @@
 export const WHATSAPP_NUMBER = "6281259969967"
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Halo Lumpia Geget Surabaya, saya mau pesan.",
+  "Halo Lumpia Geget Suramadu, saya mau pesan.",
 )}`
 export const WHATSAPP_INFO_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Halo, saya ingin bertanya tentang produk Lumpia Geget Surabaya.",
+  "Halo, saya ingin bertanya tentang produk Lumpia Geget Suramadu.",
 )}`
 
 // Placeholder – replace with the actual GrabFood store URL once available
@@ -24,7 +24,7 @@ export const menuItems: MenuItem[] = [
   {
     name: "Lumpia Geget",
     description:
-      "Lumpia renyah dengan isian premium yang gurih dan penuh rasa. Digoreng fresh sampai keemasan sempurna — signature khas Lumpia Geget Surabaya.",
+      "Lumpia renyah dengan isian premium yang gurih dan penuh rasa. Digoreng fresh sampai keemasan sempurna — signature khas Lumpia Geget Suramadu.",
     price: "Rp 3.000 / pcs",
     image: "/menu-lumpia.png",
     badge: "Best Seller",

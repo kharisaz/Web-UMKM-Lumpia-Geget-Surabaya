@@ -34,7 +34,7 @@ export function AboutSection() {
           </Reveal>
           <Reveal direction="right" delay={100} className="max-w-xl">
             <p className="text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              Lumpia Geget Surabaya lahir dari kecintaan pada jajanan pasar yang otentik. Kami percaya bahwa
+              Lumpia Geget Suramadu lahir dari kecintaan pada jajanan pasar yang otentik. Kami percaya bahwa
               kelezatan sejati datang dari bahan berkualitas, resep yang tulus, dan penyajian yang tepat waktu.
               Setiap lumpia kami goreng saat kamu pesan, sehingga tidak ada kompromi soal rasa dan tekstur.
             </p>

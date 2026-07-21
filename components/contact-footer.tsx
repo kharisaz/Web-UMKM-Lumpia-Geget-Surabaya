@@ -7,7 +7,7 @@ import { WHATSAPP_LINK, GRABFOOD_LINK } from "@/lib/site-data"
    klik kanan → "What's here?" → salin lat,lng dari URL.               */
 const MAPS_LAT = -7.2575
 const MAPS_LNG = 112.7524
-const MAPS_LABEL = "Lumpia Geget Surabaya"
+const MAPS_LABEL = "Lumpia Geget Suramadu"
 const MAPS_LINK = "https://share.google/FxNleqBPZDCgnCheL"
 const MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d302.45786055889096!2d112.77592499845548!3d-7.230048647979043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f90055573a2d%3A0x7c33ba642a093604!2sLumpia%20Geget%20Suramadu!5e0!3m2!1sen!2sid!4v1784638591090!5m2!1sen!2sid"
 
@@ -122,7 +122,7 @@ export function ContactFooter() {
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="WhatsApp Lumpia Geget Surabaya"
+                  aria-label="WhatsApp Lumpia Geget Suramadu"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
                 >
                   <MessageCircle className="h-5 w-5" />
@@ -131,7 +131,7 @@ export function ContactFooter() {
                   href={INSTAGRAM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram Lumpia Geget Surabaya"
+                  aria-label="Instagram Lumpia Geget Suramadu"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:border-pink-500 hover:bg-pink-500 hover:text-white"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
@@ -140,7 +140,7 @@ export function ContactFooter() {
                   href={GRABFOOD_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GrabFood Lumpia Geget Surabaya"
+                  aria-label="GrabFood Lumpia Geget Suramadu"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-foreground/20 transition-colors hover:border-[#00B14F] hover:bg-[#00B14F] hover:text-white"
                 >
                   <ShoppingBag className="h-5 w-5" />
@@ -168,7 +168,7 @@ export function ContactFooter() {
             </a>
           </div>
           <iframe
-            title="Lokasi Lumpia Geget Surabaya di Google Maps"
+            title="Lokasi Lumpia Geget Suramadu di Google Maps"
             src={MAPS_EMBED}
             width="100%"
             height="300"

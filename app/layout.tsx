@@ -12,9 +12,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Lumpia Geget Surabaya | Kerenyahan Autentik Khas Surabaya',
+  title: 'Lumpia Geget Suramadu | Kerenyahan Autentik Khas Surabaya',
   description:
-    'Lumpia Geget Surabaya menyajikan lumpia renyah dengan cita rasa autentik, bahan premium, dan disajikan fresh setiap hari. Pesan sekarang via WhatsApp.',
+    'Lumpia Geget Suramadu menyajikan lumpia renyah dengan cita rasa autentik, bahan premium, dan disajikan fresh setiap hari. Pesan sekarang via WhatsApp.',
   generator: 'v0.app',
   icons: {
     icon: [
