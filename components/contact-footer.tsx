@@ -8,8 +8,8 @@ import { WHATSAPP_LINK, GRABFOOD_LINK } from "@/lib/site-data"
 const MAPS_LAT = -7.2575
 const MAPS_LNG = 112.7524
 const MAPS_LABEL = "Lumpia Geget Surabaya"
-const MAPS_LINK = `https://www.google.com/maps?q=${MAPS_LAT},${MAPS_LNG}+(${encodeURIComponent(MAPS_LABEL)})`
-const MAPS_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4!2d${MAPS_LNG}!3d${MAPS_LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${MAPS_LABEL}!5e0!3m2!1sid!2sid!4v1`
+const MAPS_LINK = "https://share.google/FxNleqBPZDCgnCheL"
+const MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d302.45786055889096!2d112.77592499845548!3d-7.230048647979043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f90055573a2d%3A0x7c33ba642a093604!2sLumpia%20Geget%20Suramadu!5e0!3m2!1sen!2sid!4v1784638591090!5m2!1sen!2sid"
 
 const INSTAGRAM_LINK = "https://www.instagram.com/lumpiagegetsurabaya"
 
@@ -75,11 +75,11 @@ export function ContactFooter() {
                 <h3 className="text-sm font-bold uppercase tracking-wide">Lokasi</h3>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">
-                Jl. Genteng Besar No. 12,
+                Jl. Bulak Cumpat Barat V No.58,
                 <br />
-                Genteng, Surabaya,
+                Bulak, Kec. Bulak, Surabaya,
                 <br />
-                Jawa Timur 60275
+                Jawa Timur 60129
               </p>
               <a
                 href={MAPS_LINK}
