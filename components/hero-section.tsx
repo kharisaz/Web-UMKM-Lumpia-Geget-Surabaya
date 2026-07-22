@@ -13,11 +13,11 @@ export function HeroSection() {
             Khas Surabaya
           </span>
           <h1 className="mt-5 text-balance text-4xl font-black leading-[1.05] tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-            Kerenyahan Autentik Lumpia Geget Suramadu
+            Kerenyahan Autentik Lumpia Geget Surabaya
           </h1>
           <p className="mt-5 max-w-md text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Digoreng fresh setiap pesanan dengan bahan premium. Renyah di luar, gurih di dalam, cita rasa asli
-            Suramadu yang bikin nagih.
+            Surabaya yang bikin nagih.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -27,7 +27,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
               <MessageCircle className="h-5 w-5" />
-              Contact via WhatsApp
+              Pesan via WhatsApp
             </a>
             <a
               href="#menu"

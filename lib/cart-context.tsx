@@ -30,9 +30,10 @@ type CartContextValue = {
 
 const CartContext = createContext<CartContextValue | null>(null)
 
-/** Parse "Rp 3.000 / pcs" → 3000 */
-function parsePrice(raw: string): number {
-  const digits = raw.replace(/[^0-9]/g, "")
+/** Parse "Rp 3.000 / pcs" → 3000, "Rp 10.000 / 3 pcs" → 10000 */
+export function parsePrice(raw: string): number {
+  const firstPart = raw.split("/")[0] || ""
+  const digits = firstPart.replace(/[^0-9]/g, "")
   return parseInt(digits, 10) || 0
 }
 

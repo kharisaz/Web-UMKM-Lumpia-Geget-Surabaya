@@ -10,7 +10,7 @@ export function FaqSection() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="scroll-mt-20 bg-secondary/40">
+    <section id="faq" className="scroll-mt-20">
       <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
         <Reveal className="text-center">
           <span className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">FAQ</span>

@@ -1,6 +1,7 @@
 import { Clock, MapPin, Phone, Mail, MessageCircle, ShoppingBag, ExternalLink } from "lucide-react"
 import { WHATSAPP_LINK, GRABFOOD_LINK } from "@/lib/site-data"
 
+<<<<<<< HEAD
 /* ── Google Maps deep-link & embed ──────────────────────────────────────
    Ganti koordinat di bawah dengan koordinat asli toko Anda:
    Untuk mendapatkan koordinat: buka Google Maps → cari lokasi toko →
@@ -10,6 +11,22 @@ const MAPS_LNG = 112.7524
 const MAPS_LABEL = "Lumpia Geget Suramadu"
 const MAPS_LINK = "https://share.google/FxNleqBPZDCgnCheL"
 const MAPS_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d302.45786055889096!2d112.77592499845548!3d-7.230048647979043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f90055573a2d%3A0x7c33ba642a093604!2sLumpia%20Geget%20Suramadu!5e0!3m2!1sen!2sid!4v1784638591090!5m2!1sen!2sid"
+=======
+// Lokasi 1: Sekolah (Senin - Jumat)
+// Silakan ganti MAPS_SEKOLAH_LAT, MAPS_SEKOLAH_LNG, & MAPS_SEKOLAH_EMBED dengan titik sekolah dari Bryan nanti
+const MAPS_SEKOLAH_LAT = -7.267539
+const MAPS_SEKOLAH_LNG = 112.795389
+const MAPS_SEKOLAH_LABEL = "Lumpia Geget Suramadu - Sekolah"
+const MAPS_SEKOLAH_LINK = `https://www.google.com/maps?q=${MAPS_SEKOLAH_LAT},${MAPS_SEKOLAH_LNG}+(${encodeURIComponent(MAPS_SEKOLAH_LABEL)})`
+const MAPS_SEKOLAH_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4!2d${MAPS_SEKOLAH_LNG}!3d${MAPS_SEKOLAH_LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${MAPS_SEKOLAH_LABEL}!5e0!3m2!1sid!2sid!4v1`
+
+// Lokasi 2: Rumah (Sabtu - Minggu)
+const MAPS_RUMAH_LAT = -7.230061469620751
+const MAPS_RUMAH_LNG = 112.77588286663392
+const MAPS_RUMAH_LABEL = "Lumpia Geget Suramadu"
+const MAPS_RUMAH_LINK = `https://www.google.com/maps?q=${MAPS_RUMAH_LAT},${MAPS_RUMAH_LNG}+(${encodeURIComponent(MAPS_RUMAH_LABEL)})`
+const MAPS_RUMAH_EMBED = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4!2d${MAPS_RUMAH_LNG}!3d${MAPS_RUMAH_LAT}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${MAPS_RUMAH_LABEL}!5e0!3m2!1sid!2sid!4v1`
+>>>>>>> 271c3c3 (update)
 
 const INSTAGRAM_LINK = "https://www.instagram.com/lumpiagegetsurabaya"
 
@@ -36,7 +53,7 @@ export function ContactFooter() {
                 className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105"
               >
                 <MessageCircle className="h-5 w-5" />
-                Contact via WhatsApp
+                Pesan via WhatsApp
               </a>
               <a
                 href={GRABFOOD_LINK}
@@ -52,12 +69,13 @@ export function ContactFooter() {
 
           {/* Right: Info grid */}
           <div className="grid gap-8 sm:grid-cols-2">
-            {/* Jam Buka */}
+            {/* Jadwal & Lokasi 1 (Sekolah) */}
             <div>
               <div className="flex items-center gap-2 text-accent">
                 <Clock className="h-5 w-5" />
-                <h3 className="text-sm font-bold uppercase tracking-wide">Jam Buka</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wide">Senin – Jumat (Depan Sekolah)</h3>
               </div>
+<<<<<<< HEAD
               <ul className="mt-3 space-y-1 text-sm text-primary-foreground/70">
                 <li>Senin – Jumat: 08.00 – 20.00</li>
                 <li>Sabtu – Minggu: 08.00 – 21.00</li>
@@ -80,12 +98,44 @@ export function ContactFooter() {
                 Bulak, Kec. Bulak, Surabaya,
                 <br />
                 Jawa Timur 60129
+=======
+              <p className="mt-3 text-sm font-semibold text-primary-foreground">
+                Jam Operasional: 09.00 – 16.00
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed text-primary-foreground/70">
+                Jl. Sutorejo Utara VII Blok G-26 No.51 Kec. Bulak, Surabaya, Jawa Timur 60129
+>>>>>>> 271c3c3 (update)
               </p>
               <a
-                href={MAPS_LINK}
+                href={MAPS_SEKOLAH_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent transition-opacity hover:opacity-70"
+                className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-accent transition-opacity hover:opacity-70"
+              >
+                Buka di Google Maps
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+
+            {/* Jadwal & Lokasi 2 (Rumah) */}
+            <div>
+              <div className="flex items-center gap-2 text-accent">
+                <Clock className="h-5 w-5" />
+                <h3 className="text-sm font-bold uppercase tracking-wide">Sabtu – Minggu (Rumah)</h3>
+              </div>
+              <p className="mt-3 text-sm font-semibold text-primary-foreground">
+                Jam Operasional: 08.00 – 17.00
+              </p>
+              <p className="mt-1.5 text-sm leading-relaxed text-primary-foreground/70">
+                Jl. Bulak Cumpat Barat V No.58,
+                <br />
+                Kec. Bulak, Surabaya, Jawa Timur 60129
+              </p>
+              <a
+                href={MAPS_RUMAH_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2.5 inline-flex items-center gap-1 text-xs font-semibold text-accent transition-opacity hover:opacity-70"
               >
                 Buka di Google Maps
                 <ExternalLink className="h-3 w-3" />
@@ -151,22 +201,65 @@ export function ContactFooter() {
         </div>
 
         {/* ── Google Maps Embed ───────────────────────── */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-primary-foreground/10">
-          <div className="flex items-center justify-between bg-primary-foreground/5 px-4 py-3">
-            <div className="flex items-center gap-2 text-sm font-semibold text-primary-foreground/80">
-              <MapPin className="h-4 w-4 text-accent" />
-              {MAPS_LABEL}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Map 1: Sekolah */}
+          <div className="overflow-hidden rounded-2xl border border-primary-foreground/10">
+            <div className="flex items-center justify-between bg-primary-foreground/5 px-4 py-3">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary-foreground/80">
+                <MapPin className="h-4 w-4 text-accent" />
+                Depan Sekolah (Senin - Jumat)
+              </div>
+              <a
+                href={MAPS_SEKOLAH_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground transition-opacity hover:opacity-80"
+              >
+                Buka Maps
+                <ExternalLink className="h-3 w-3" />
+              </a>
             </div>
-            <a
-              href={MAPS_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground transition-opacity hover:opacity-80"
-            >
-              Buka Maps
-              <ExternalLink className="h-3 w-3" />
-            </a>
+            <iframe
+              title="Lokasi Sekolah - Lumpia Geget Surabaya di Google Maps"
+              src={MAPS_SEKOLAH_EMBED}
+              width="100%"
+              height="250"
+              style={{ border: 0, display: "block", filter: "invert(10%) hue-rotate(190deg)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
+
+          {/* Map 2: Rumah */}
+          <div className="overflow-hidden rounded-2xl border border-primary-foreground/10">
+            <div className="flex items-center justify-between bg-primary-foreground/5 px-4 py-3">
+              <div className="flex items-center gap-2 text-sm font-semibold text-primary-foreground/80">
+                <MapPin className="h-4 w-4 text-accent" />
+                Rumah (Sabtu - Minggu)
+              </div>
+              <a
+                href={MAPS_RUMAH_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground transition-opacity hover:opacity-80"
+              >
+                Buka Maps
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+            <iframe
+              title="Lokasi Rumah - Lumpia Geget Surabaya di Google Maps"
+              src={MAPS_RUMAH_EMBED}
+              width="100%"
+              height="250"
+              style={{ border: 0, display: "block", filter: "invert(10%) hue-rotate(190deg)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+<<<<<<< HEAD
           <iframe
             title="Lokasi Lumpia Geget Suramadu di Google Maps"
             src={MAPS_EMBED}
@@ -177,12 +270,14 @@ export function ContactFooter() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
+=======
+>>>>>>> 271c3c3 (update)
         </div>
 
         {/* ── Bottom Bar ─────────────────────────────── */}
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/15 py-6 text-sm text-primary-foreground/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} Lumpia Geget Suramadu. Semua hak dilindungi.</p>
-          <p>Trustwhorty</p>
+          <p>© {new Date().getFullYear()} Lumpia Geget Surabaya. Semua hak dilindungi.</p>
+          <p>Trustworthy</p>
         </div>
       </div>
     </footer>

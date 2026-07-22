@@ -21,8 +21,12 @@ export default function Page() {
       {/* Order section with WhatsApp & GrabFood */}
       <WaveDivider className="text-secondary/40" flip />
       <OrderSection />
+<<<<<<< HEAD
       {/* wave into the tinted FAQ section */}
       <WaveDivider className="text-secondary/40" flip />
+=======
+      <WaveDivider className="text-secondary/40" />
+>>>>>>> 271c3c3 (update)
       <FaqSection />
       <ContactFooter />
     </main>
