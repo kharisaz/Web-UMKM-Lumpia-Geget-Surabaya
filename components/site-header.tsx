@@ -29,20 +29,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
         <a href="#top" className="flex items-center gap-2.5 font-bold tracking-tight text-primary">
           <Image
-<<<<<<< HEAD
             src="/logo.png"
             alt="Logo Lumpia Geget Suramadu"
             width={36}
             height={36}
             className="h-9 w-9 rounded-full object-cover shadow-sm border border-accent/30"
-=======
-            src="/logo-lgs.png"
-            alt="Logo Lumpia Geget Suramadu"
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain rounded-md"
-            priority
->>>>>>> 271c3c3 (update)
           />
           <span className="text-base leading-none md:text-lg">
             Lumpia Geget<span className="hidden sm:inline"> Suramadu</span>

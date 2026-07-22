@@ -21,16 +21,9 @@ export type MenuItem = {
 
 export const menuItems: MenuItem[] = [
   {
-<<<<<<< HEAD
-    name: "Lumpia Geget",
-    description:
-      "Lumpia renyah dengan isian premium yang gurih dan penuh rasa. Digoreng fresh sampai keemasan sempurna — signature khas Lumpia Geget Suramadu.",
-    price: "Rp 3.000 / pcs",
-=======
     name: "Lumpia Rebung Reguler",
     description: "Lumpia goreng renyah ukuran reguler dengan isian rebung manis segar pilihan, wortel, dan bumbu khas Surabaya.",
     price: "Rp 5.000 / pcs",
->>>>>>> 271c3c3 (update)
     image: "/menu-lumpia.png",
     category: "lainnya",
   },
