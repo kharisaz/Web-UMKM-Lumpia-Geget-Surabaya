@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { Menu, X, ShoppingCart } from "lucide-react"
 import { navLinks } from "@/lib/site-data"
 import { useCart } from "@/lib/cart-context"
@@ -26,10 +27,14 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
-        <a href="#top" className="flex items-center gap-2 font-bold tracking-tight text-primary">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-accent text-sm font-black text-accent-foreground">
-            LG
-          </span>
+        <a href="#top" className="flex items-center gap-2.5 font-bold tracking-tight text-primary">
+          <Image
+            src="/logo.png"
+            alt="Logo Lumpia Geget Suramadu"
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-full object-cover shadow-sm border border-accent/30"
+          />
           <span className="text-base leading-none md:text-lg">
             Lumpia Geget<span className="hidden sm:inline"> Suramadu</span>
           </span>
