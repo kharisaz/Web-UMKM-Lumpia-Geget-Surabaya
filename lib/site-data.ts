@@ -231,7 +231,6 @@ export const navLinks = [
   { label: "Tentang", href: "#about" },
   { label: "Menu", href: "#menu" },
   { label: "Pesan", href: "#order" },
-  { label: "Ulasan", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
   { label: "Kontak", href: "#contact" },
 ]

@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { MenuSection } from "@/components/menu-section"
 import { OrderSection } from "@/components/order-section"
-import { ReviewsSection } from "@/components/reviews-section"
 import { FaqSection } from "@/components/faq-section"
 import { ContactFooter } from "@/components/contact-footer"
 import { WaveDivider } from "@/components/wave-divider"
@@ -22,8 +21,6 @@ export default function Page() {
       {/* Order section with WhatsApp & GrabFood */}
       <WaveDivider className="text-secondary/40" flip />
       <OrderSection />
-      <WaveDivider className="text-secondary/40" />
-      <ReviewsSection />
       {/* wave into the tinted FAQ section */}
       <WaveDivider className="text-secondary/40" flip />
       <FaqSection />

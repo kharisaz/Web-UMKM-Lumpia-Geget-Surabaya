@@ -36,22 +36,6 @@ export function HeroSection() {
               Lihat Menu
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-8">
-            <div>
-              <p className="text-2xl font-black text-primary">10rb+</p>
-              <p className="text-xs text-muted-foreground">Lumpia terjual</p>
-            </div>
-            <div className="h-8 w-px bg-border" />
-            <div>
-              <p className="text-2xl font-black text-primary">100%</p>
-              <p className="text-xs text-muted-foreground">Digoreng fresh</p>
-            </div>
-            <div className="h-8 w-px bg-border" />
-            <div>
-              <p className="text-2xl font-black text-primary">4.9★</p>
-              <p className="text-xs text-muted-foreground">Rating pelanggan</p>
-            </div>
-          </div>
         </Reveal>
 
         <Reveal direction="right" delay={120} className="relative">
