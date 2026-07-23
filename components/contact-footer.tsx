@@ -226,7 +226,7 @@ export function ContactFooter() {
         {/* ── Bottom Bar ─────────────────────────────── */}
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/15 py-6 text-sm text-primary-foreground/60 sm:flex-row">
           <p>© {new Date().getFullYear()} Lumpia Geget Surabaya. Semua hak dilindungi.</p>
-          <p>Trustworthy</p>
+          <p>Made with ❤️ by Trustworthy</p>
         </div>
       </div>
     </footer>
