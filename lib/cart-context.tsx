@@ -17,7 +17,6 @@ export type CartItem = {
 type CartContextValue = {
   items: CartItem[]
   totalQty: number
-  totalPrice: number
   /** Set or update qty for any menu item (adds if not in cart, removes if qty <= 0) */
   setItemQty: (item: MenuItem, qty: number) => void
   getQty: (name: string) => number
@@ -67,17 +66,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const closeCart = useCallback(() => setCartOpen(false), [])
 
   const totalQty = items.reduce((s, ci) => s + ci.qty, 0)
-  const totalPrice = items.reduce(
-    (s, ci) => s + parsePrice(ci.item.price) * ci.qty,
-    0,
-  )
 
   return (
     <CartContext.Provider
       value={{
         items,
         totalQty,
-        totalPrice,
         setItemQty,
         getQty,
         clear,

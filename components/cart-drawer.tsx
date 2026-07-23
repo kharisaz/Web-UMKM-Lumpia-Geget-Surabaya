@@ -13,18 +13,14 @@ function formatRupiah(n: number) {
 
 function buildWhatsAppMessage(
   items: ReturnType<typeof useCart>["items"],
-  total: number,
   nama: string,
   alamat: string,
   catatan: string,
 ) {
-  const lines = items.map((ci) => {
-    const unit = parsePrice(ci.item.price)
-    return `• ${ci.item.name} × ${ci.qty} = ${formatRupiah(unit * ci.qty)}`
-  })
+  const lines = items.map((ci) => `• ${ci.item.name} (${ci.item.price}) × ${ci.qty}`)
 
   const msg = [
-    "Halo Lumpia Geget Suramadu! 👋",
+    "Halo Lumpia Geget Suramadu!",
     "",
     `*Nama:* ${nama}`,
     `*Alamat:* ${alamat}`,
@@ -33,9 +29,7 @@ function buildWhatsAppMessage(
     "*Pesanan:*",
     ...lines,
     "",
-    `*Total Estimasi: ${formatRupiah(total)}*`,
-    "",
-    "Mohon konfirmasi ketersediaan dan estimasi waktu siapnya ya. Terima kasih! 🙏",
+    "Mohon konfirmasi ketersediaan dan total harganya ya. Terima kasih!",
   ].join("\n")
 
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
@@ -65,11 +59,6 @@ function QtyRow({ item }: QtyRowProps) {
       <div className="flex flex-1 flex-col gap-0.5 min-w-0">
         <p className="truncate text-sm font-semibold text-primary">{item.name}</p>
         <p className="text-xs text-muted-foreground">{item.price}</p>
-        {qty > 0 && (
-          <p className="text-[11px] font-bold text-accent-foreground">
-            = {formatRupiah(unitPrice * qty)}
-          </p>
-        )}
       </div>
 
       {/* Stepper */}
@@ -157,7 +146,7 @@ function Field({
 
 /* ── Main Drawer ── */
 export function CartDrawer() {
-  const { items, totalQty, totalPrice, clear, isCartOpen, closeCart } = useCart()
+  const { items, totalQty, clear, isCartOpen, closeCart } = useCart()
   const drawerRef = useRef<HTMLDivElement>(null)
 
   const [nama, setNama] = useState("")
@@ -180,7 +169,7 @@ export function CartDrawer() {
 
   const handleOrder = () => {
     if (!canOrder) return
-    const url = buildWhatsAppMessage(items, totalPrice, nama.trim(), alamat.trim(), catatan)
+    const url = buildWhatsAppMessage(items, nama.trim(), alamat.trim(), catatan)
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
@@ -300,22 +289,20 @@ export function CartDrawer() {
         <div className="border-t border-border bg-background/80 px-5 py-4 backdrop-blur-sm">
           {/* Order summary */}
           {totalQty > 0 && (
-            <div className="mb-3 space-y-1">
-              {items.map((ci) => {
-                const unit = parsePrice(ci.item.price)
-                return (
-                  <div key={ci.item.name} className="flex justify-between text-xs text-muted-foreground">
-                    <span className="truncate max-w-[60%]">{ci.item.name} × {ci.qty}</span>
-                    <span>{formatRupiah(unit * ci.qty)}</span>
+            <div className="mb-3 space-y-1.5 rounded-xl bg-secondary/60 p-3">
+              <p className="text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
+                Daftar Pesanan ({totalQty} item)
+              </p>
+              <div className="max-h-28 overflow-y-auto space-y-1 pr-1">
+                {items.map((ci) => (
+                  <div key={ci.item.name} className="flex justify-between text-xs text-primary font-medium">
+                    <span className="truncate max-w-[75%]">{ci.item.name}</span>
+                    <span className="font-bold text-accent-foreground">× {ci.qty}</span>
                   </div>
-                )
-              })}
-              <div className="flex justify-between border-t border-border pt-2 text-sm font-black text-primary">
-                <span>Total Estimasi</span>
-                <span>{formatRupiah(totalPrice)}</span>
+                ))}
               </div>
-              <p className="text-[10px] text-muted-foreground">
-                *Belum termasuk ongkir. Harga final dikonfirmasi via WA.
+              <p className="text-[10px] text-muted-foreground pt-1.5 border-t border-border/60">
+                *Total harga &amp; ongkir akan dikonfirmasi langsung via WhatsApp.
               </p>
             </div>
           )}
