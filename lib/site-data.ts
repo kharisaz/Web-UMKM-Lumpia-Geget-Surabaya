@@ -9,86 +9,269 @@ export const WHATSAPP_INFO_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encod
 // Placeholder – replace with the actual GrabFood store URL once available
 export const GRABFOOD_LINK = "https://food.grab.com/id/en/restaurants"
 
+export type CategoryId = "jajanan" | "paket-nasi" | "menu-harian" | "lauk-sayur" | "bahan-minuman"
+
+export type MenuCategory = {
+  id: CategoryId
+  name: string
+  subtitle: string
+}
+
+export const menuCategories: MenuCategory[] = [
+  {
+    id: "jajanan",
+    name: "Jajanan, Gorengan & Frozen Food",
+    subtitle: "Lumpia rebung khas, gorengan renyah, dan stok frozen food praktis.",
+  },
+  {
+    id: "paket-nasi",
+    name: "Paket Nasi & Tumpeng",
+    subtitle: "Nasi Bebek Madura, Nasi Jumat Berkah, Nasi Kotak, dan Tumpeng Syukuran.",
+  },
+  {
+    id: "menu-harian",
+    name: "Paket Menu Harian Komplit",
+    subtitle: "Paket makan sehat seimbang lauk & sayur komplit Rp 15.000 / porsi.",
+  },
+  {
+    id: "lauk-sayur",
+    name: "Menu Lauk Pauk & Sayur",
+    subtitle: "Aneka masakan lauk rumahan (bumbu bali, mangut lele, lontong mie, dll).",
+  },
+  {
+    id: "bahan-minuman",
+    name: "Bahan Mentah & Minuman",
+    subtitle: "Rebung segar olahan kiloan dan minuman herbal Sinom dingin.",
+  },
+]
+
 export type MenuItem = {
   name: string
   description: string
   price: string
   image: string
-  featured?: boolean
+  category: CategoryId
   badge?: string
-  category: "unggulan" | "lainnya"
+  featured?: boolean
 }
 
 export const menuItems: MenuItem[] = [
+  // ── 1. Jajanan, Gorengan & Frozen Food ──────────────────────
   {
     name: "Lumpia Rebung Reguler",
-    description: "Lumpia goreng renyah ukuran reguler dengan isian rebung manis segar pilihan, wortel, dan bumbu khas Surabaya.",
+    description: "Lumpia goreng renyah ukuran reguler dengan isian rebung manis gurih khas Lumpia Geget Suramadu.",
     price: "Rp 5.000 / pcs",
     image: "/menu-lumpia.png",
-    category: "lainnya",
+    category: "jajanan",
+    badge: "Best Seller",
+    featured: true,
   },
   {
     name: "Lumpia Rebung Jumbo",
-    description: "Lumpia goreng porsi mantap ukuran jumbo, diisi penuh dengan rebung manis, telur, dan irisan daging ayam lezat.",
+    description: "Lumpia goreng porsi jumbo mantap dengan isian rebung melimpah dan gurih khas Suramadu.",
     price: "Rp 7.000 / pcs",
     image: "/menu-lumpia.png",
-    category: "lainnya",
+    category: "jajanan",
+    badge: "Pilihan Jumbo",
+    featured: true,
   },
   {
-    name: "Pastel Roguth",
-    description: "Pastel krispi dengan kulit pastry berlapis, berisi ragout ayam dan sayuran creamy yang gurih lezat.",
+    name: "Lumpia Frozen",
+    description: "Lumpia rebung mentah beku/frozen praktis, siap digoreng sendiri kapan saja di rumah.",
+    price: "Rp 25.000 / 5 pcs",
+    image: "/menu-lumpia-frozen.jpg",
+    category: "jajanan",
+    badge: "Frozen Food",
+  },
+  {
+    name: "Pastel (Roguth)",
+    description: "Pastel krispi garing berlapis dengan isian rogut ayam dan sayuran creamy khas rumahan.",
     price: "Rp 6.000 / pcs",
     image: "/menu-pastel.png",
-    category: "lainnya",
+    category: "jajanan",
+    badge: "Favorit",
   },
   {
     name: "Ote-ote Udang",
-    description: "Bakwan sayur khas Surabaya yang digoreng garing keemasan dengan topping udang segar utuh di atasnya. (Isi 3 pcs)",
-    price: "Rp 10.000 / isi 3",
+    description: "Bakwan udang khas yang renyah keemasan dengan campuran sayuran segar dan topping udang utuh.",
+    price: "Rp 10.000 / 3 pcs",
     image: "/menu-ote-ote.png",
-    category: "lainnya",
+    category: "jajanan",
+    badge: "Dapat 3 Pcs",
   },
   {
     name: "Tahu Isi Sayur",
-    description: "Tahu goreng renyah dengan isian tumisan sayur segar bumbu gurih khas rumahan. (Isi 3 pcs)",
-    price: "Rp 10.000 / isi 3",
+    description: "Tahu goreng gurih renyah di luar, berisian tumisan sayuran segar bumbu gurih lezat.",
+    price: "Rp 10.000 / 3 pcs",
     image: "/menu-tahu-isi.png",
-    category: "lainnya",
+    category: "jajanan",
+    badge: "Dapat 3 Pcs",
   },
   {
-    name: "Nasi Bebek",
-    description: "Nasi hangat disajikan dengan bebek goreng bumbu bebek gurih khas Surabaya, lalapan, dan sambal pedas.",
-    price: "Rp 15.000 / pcs",
+    name: "Kroket (Frozen / Goreng)",
+    description: "Kroket kentang lezat dengan isian gurih, tersedia pilihan siap makan (goreng) atau frozen.",
+    price: "Rp 5.000 / pcs",
+    image: "/menu-risol.png",
+    category: "jajanan",
+  },
+  {
+    name: "Bergedel",
+    description: "Perkedel kentang bumbu rempah pilihan, lembut di dalam dan gurih di luar.",
+    price: "Rp 2.500 / pcs",
+    image: "/placeholder.svg",
+    category: "jajanan",
+  },
+
+  // ── 2. Paket Nasi & Tumpeng ─────────────────────────────────
+  {
+    name: "Nasi Bebek Madura",
+    description: "Nasi hangat disajikan dengan bebek goreng gurih krispi khas Madura, bumbu rempah, lalapan, dan sambal pedas.",
+    price: "Rp 15.000",
     image: "/menu-nasi-bebek.png",
-    category: "lainnya",
-  },
-  {
-    name: "Nasi Kotak",
-    description: "Paket nasi kotak praktis higienis lengkap dengan lauk pauk pilihan, cocok untuk rapat kantor maupun konsumsi acara.",
-    price: "Mulai Rp 15.000 (sesuai menu)",
-    image: "/menu-nasi-kotak.png",
-    category: "lainnya",
+    category: "paket-nasi",
+    badge: "Best Seller",
+    featured: true,
   },
   {
     name: "Nasi Jumat Berkah",
-    description: "Paket nasi kotak spesial Jumat Berkah dengan menu masakan rumahan lezat, higienis, dan harga bersahabat.",
-    price: "Rp 10.000 / pcs",
+    description: "Paket nasi hemat spesial Jumat Berkah lengkap dengan lauk pauk lezat (seperti ayam bakar/goreng, lalapan & sambal).",
+    price: "Rp 10.000 / porsi",
+    image: "/menu-jumat-berkah.jpg",
+    category: "paket-nasi",
+    badge: "Spesial Berkah",
+  },
+  {
+    name: "Menu Nasi Porsi Biasa",
+    description: "Nasi porsi biasa hangat dengan pilihan lauk harian (ayam/daging/ikan) dan sayur rumahan.",
+    price: "Rp 13.000 - Rp 15.000 / porsi",
     image: "/menu-nasi-kotak.png",
-    category: "lainnya",
+    category: "paket-nasi",
+  },
+  {
+    name: "Nasi Kotak",
+    description: "Paket konsumsi nasi kotak praktis & higienis untuk rapat, pengajian, atau acara kantor. Harga menyesuaikan menu.",
+    price: "Rp 15.000 - Rp 30.000 / kotak",
+    image: "/menu-nasi-kotak.png",
+    category: "paket-nasi",
+    badge: "Bisa Custom",
   },
   {
     name: "Tumpeng (10 Porsi)",
-    description: "Nasi kuning tumpeng lengkap untuk 10 porsi acara syukuran. Dilengkapi ayam goreng, kering tempe, mi, perkedel, telur dadar iris, dan sambal.",
-    price: "Rp 350.000 / paket",
-    image: "/menu-nasi-kotak.png",
-    category: "lainnya",
+    description: "Nasi tumpeng hias cantik untuk 10 porsi acara syukuran. Bisa nambah lauk sesuai permintaan dengan tambahan harga lauk.",
+    price: "Rp 350.000 / 10 porsi",
+    image: "/menu-tumpeng.jpg",
+    category: "paket-nasi",
+    badge: "Acara Syukuran",
+  },
+
+  // ── 3. Paket Menu Harian Komplit (Rp 15.000 / porsi) ───────
+  {
+    name: "Menu Harian 1: Bayam & Botok Udang",
+    description: "Paket komplit: Sayur bayem segar, botok udang gurih, tatem ayam crispi, dan dadar jagung renyah.",
+    price: "Rp 15.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "menu-harian",
+    badge: "Paket Komplit",
+  },
+  {
+    name: "Menu Harian 2: Sambal Tempe & Dadar Telur",
+    description: "Paket komplit: Sambel tempe kacang panjang pedas nikmat disajikan dengan dadar telor hangat.",
+    price: "Rp 15.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "menu-harian",
+    badge: "Paket Komplit",
+  },
+  {
+    name: "Menu Harian 3: Ayam Kecap & Tumis Buncis",
+    description: "Paket komplit: Ayam kecap bumbu manis gurih meresap dipadu tumis buncis wortel segar.",
+    price: "Rp 15.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "menu-harian",
+    badge: "Paket Komplit",
+  },
+  {
+    name: "Menu Harian 4: Bayam, Kreseng Tahu & Telur Puyuh",
+    description: "Paket komplit: Sayur bayem segar, kreseng tahu tempe gurih, dan telor puyuh lezat.",
+    price: "Rp 15.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "menu-harian",
+    badge: "Paket Komplit",
+  },
+
+  // ── 4. Menu Lauk Pauk & Sayur (Satuan / Porsi) ──────────────
+  {
+    name: "Bali Tahu Telor Bandeng",
+    description: "Porsi komplit lauk bumbu bali lezat. Isi komplit: 3 telor, 2 ikan bandeng, tahu, dan tempe.",
+    price: "Rp 30.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "lauk-sayur",
+    badge: "Porsi Komplit",
+  },
+  {
+    name: "Mangut Lele",
+    description: "Olahan mangut lele kuah santan bumbu rempah gurih pedas khas Jawa. (Isi: 4 lele).",
+    price: "Rp 30.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "lauk-sayur",
+    badge: "Isi 4 Lele",
+  },
+  {
+    name: "Masakan Lauk Harian Lainnya",
+    description: "Aneka masakan lauk pauk harian rumahan lezat (daging/ayam/ikan/tahu tempe) berganti tiap harinya.",
+    price: "Rp 30.000 / porsi",
+    image: "/menu-lauk-pauk.jpg",
+    category: "lauk-sayur",
+  },
+  {
+    name: "Sayur Sop",
+    description: "Sayur sop bening segar dengan potongan wortel, buncis, kentang, dan kaldu gurih harum.",
+    price: "Rp 10.000 / porsi",
+    image: "/placeholder.svg",
+    category: "lauk-sayur",
+  },
+  {
+    name: "Ayam Goreng",
+    description: "Ayam goreng bumbu ungkep rempah tradisional yang gurih meresap hingga ke dalam.",
+    price: "Rp 6.000 / potong",
+    image: "/placeholder.svg",
+    category: "lauk-sayur",
+  },
+  {
+    name: "Ayam Kentaki",
+    description: "Ayam krispi gaya kentaki dengan tepung berbumbu renyah kriuk lezat.",
+    price: "Rp 7.000 / potong",
+    image: "/placeholder.svg",
+    category: "lauk-sayur",
+  },
+  {
+    name: "Lontong Mie",
+    description: "Lontong mie khas Surabaya lengkap dengan lontong, mi kuning, petis gurih, dan taburan kerupuk.",
+    price: "Rp 12.000 / porsi",
+    image: "/menu-lontong-mie.jpg",
+    category: "lauk-sayur",
+  },
+
+  // ── 5. Bahan Mentah & Minuman ───────────────────────────────
+  {
+    name: "Rebung Utuh",
+    description: "Rebung segar utuh kualitas pilihan langsung dari pasar, siap diolah sendiri untuk masakan rumahan.",
+    price: "Rp 20.000 / kg",
+    image: "/menu-rebung.jpg",
+    category: "bahan-minuman",
+  },
+  {
+    name: "Rebung Rajang",
+    description: "Rebung siap masak yang sudah dirajang/diiris halus dan dibersihkan, praktis untuk lodeh atau lumpia.",
+    price: "Rp 22.000 / kg",
+    image: "/menu-rebung.jpg",
+    category: "bahan-minuman",
   },
   {
     name: "Sinom",
-    description: "Minuman jamu tradisional khas Jawa yang segar dari olahan kunyit dan daun asam muda asli berkualitas.",
+    description: "Minuman herbal tradisional Sinom segar dingin racikan dari kunyit dan daun asam muda asli.",
     price: "Rp 6.000 / botol",
     image: "/menu-sinom.png",
-    category: "lainnya",
+    category: "bahan-minuman",
   },
 ]
 
